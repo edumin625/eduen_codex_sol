@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>문장 학습 컴포넌트 쇼케이스</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="showcase">
+    <h1>문장 학습 컴포넌트</h1>
+    <p>기존 화면을 보존하면서 접근 가능한 버튼 상태와 모바일 터치 크기를 검증합니다.</p>
+
+    <section class="showcase-section">
+      <h2>지문 카드</h2>
+      <button class="passage-card" type="button">
+        <span class="passage-card__icon" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M13 4v5l4 2"></path><circle cx="12" cy="12" r="9"></circle></svg>
+        </span>
+        <span class="passage-card__copy">
+          <span class="passage-card__title">Reading 1</span>
+          <span class="passage-card__description">Hidden People in Sports / Pacers</span>
+        </span>
+        <span class="passage-card__meta"><span class="sentence-count">13문장</span></span>
+      </button>
+    </section>
+
+    <section class="showcase-section">
+      <h2>진행과 점수</h2>
+      <div class="showcase-row">
+        <div class="progress showcase-progress" role="progressbar" aria-label="학습 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+          <div class="progress__bar"></div>
+        </div>
+        <div class="score-chip is-popping" aria-label="현재 점수 240점">
+          <span>240</span><span class="combo">3연속</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase-section">
+      <h2>음성 버튼 상태</h2>
+      <div class="showcase-row">
+        <button class="audio-button" type="button" aria-label="문장 듣기">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15 9a4 4 0 0 1 0 6"></path><path d="M18 6a8 8 0 0 1 0 12"></path></svg>
+        </button>
+        <button class="audio-button showcase-focus" type="button" aria-label="포커스된 문장 듣기">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15 9a4 4 0 0 1 0 6"></path></svg>
+        </button>
+        <button class="audio-button showcase-pressed" type="button" aria-label="눌린 문장 듣기">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15 9a4 4 0 0 1 0 6"></path></svg>
+        </button>
+        <button class="audio-button is-loading" type="button" aria-label="불러오는 중인 문장 듣기">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15 9a4 4 0 0 1 0 6"></path></svg>
+        </button>
+        <button class="audio-button audio-button--slow" type="button" aria-label="천천히 듣기">0.7×</button>
+      </div>
+      <p class="audio-status" role="status">음성을 재생하지 못했습니다. 듣기 버튼을 다시&nbsp;눌러&nbsp;주세요.</p>
+    </section>
+
+    <section class="showcase-section">
+      <h2>단어 타일 상태</h2>
+      <div class="showcase-row">
+        <button class="word-tile" type="button">스포츠에서,</button>
+        <button class="word-tile showcase-focus" type="button">트로피나 메달을</button>
+        <button class="word-tile" type="button" disabled>선수들만</button>
+      </div>
+      <div class="answer" aria-label="선택한 해석">
+        <button class="word-tile" type="button">그들은</button>
+        <button class="word-tile" type="button">그들 스스로</button>
+      </div>
+    </section>
+
+    <section class="showcase-section">
+      <h2>행동 버튼 상태</h2>
+      <div class="showcase-row">
+        <button class="action-button" type="button">정답 확인</button>
+        <button class="action-button showcase-focus" type="button">포커스</button>
+        <button class="action-button showcase-pressed" type="button">누름</button>
+        <button class="action-button" type="button" disabled>정답 확인</button>
+        <button class="action-button action-button--retry" type="button">다시 풀기</button>
+        <button class="action-button action-button--secondary" type="button">지문 선택으로</button>
+      </div>
+    </section>
+
+    <section class="showcase-section">
+      <h2>피드백 상태</h2>
+      <div class="showcase-stack">
+        <div class="feedback feedback--success" role="status">
+          <div class="feedback__title">정답이에요!</div>
+          <div class="feedback__answer"><span class="feedback-chunk">스포츠에서,</span><span class="feedback-chunk">오직</span><span class="feedback-chunk">선수들만</span><span class="feedback-chunk">트로피나 메달을</span><span class="feedback-chunk">받지만,</span><span class="feedback-chunk">그들은</span><span class="feedback-chunk">그들 스스로</span><span class="feedback-chunk">이기지 않는다</span></div>
+          <div class="feedback__points">+100점</div>
+        </div>
+        <div class="feedback feedback--error" role="status">
+          <div class="feedback__title">다시 확인해 봐요</div>
+          <div class="feedback__answer"><span class="feedback-chunk">여러분은</span><span class="feedback-chunk">대부분의 자동차 경주에서</span><span class="feedback-chunk">자동차와 운전자만</span><span class="feedback-chunk">볼지도 모르지만,</span><span class="feedback-chunk">그 레이서 뒤에는</span><span class="feedback-chunk">팀이 있다</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
